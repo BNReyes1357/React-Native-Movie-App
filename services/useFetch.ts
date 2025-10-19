@@ -18,6 +18,7 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autofetch = true) => {
             setLoading(false);
         }
     }
+
     const reset = () => {
         setData(null);
         setLoading(false);
@@ -25,12 +26,12 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autofetch = true) => {
     }
 
     useEffect(() => {
-        if(autofetch) {
+        if (autofetch) {
             fetchData();
         }
     }, []);
 
     return {data, loading, error, refetch: fetchData, reset };
-}
+};
 
 export default useFetch;
