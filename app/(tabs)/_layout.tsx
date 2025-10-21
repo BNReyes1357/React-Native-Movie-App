@@ -1,8 +1,8 @@
-import React from 'react'
-import {Tabs} from "expo-router";
-import {Image, ImageBackground, Text, View} from "react-native";
-import {icons} from "@/constants/icons";
-import {images} from "@/constants/images";
+import { icons } from "@/constants/icons";
+import { images } from "@/constants/images";
+import { Tabs } from "expo-router";
+import React from 'react';
+import { Image, ImageBackground, Text, View } from "react-native";
 
 type IconProps = {
     focused: boolean;
@@ -17,8 +17,10 @@ const TabIcon = ({focused, icon, title}: IconProps) => {
                 source={images.highlight}
                 className="flex flex-row w-full flex-1 min-w-[112px] min-h-16 mt-4 justify-center items-center rounded-full overflow-hidden"
             >
-                <Image source={icon} tintColor="#151312" className="size-5" />
-                <Text className="text-gray-900 text-base font-semibold">{title}</Text>
+                <View className="flex-row items-center gap-2">
+                    <Image source={icon} tintColor="#151312" className="size-5" />
+                    <Text className="text-gray-900 text-base font-semibold">{title}</Text>
+                </View>
             </ImageBackground>
         );
     }
